@@ -1,0 +1,43 @@
+{% extends "admin_master.html" %}
+{% block content %}
+{% load staticfiles %}
+{% load static %}
+
+<div class="bg0" style="padding: 20px;">
+	<div class="row" style="margin: 0px;">
+		{% if user.is_authenticated %}
+		<div class="col-md-12 bg2" style="">
+			<div class="row">			
+				<div class="col-md-offset-2 col-md-8" style="text-align: center;">
+					<h1>Edit Case Study</h1>
+				</div>
+			</div>
+			<div class="row">				
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th class="col-md-4">TITLE</th>
+							<th class="col-md-4">COMPANY</th>
+							<th class="col-md-4">CATEGORY</th>
+							<th class="col-md-2" style="text-align: center;">EDIT</th>
+							<th class="col-md-2" style="text-align: center;">DELETE</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for post in cases %}
+						<tr>
+							<td>{{post.title}}</td>
+							<td>{{post.company}}</td>
+							<td>{{post.category}}</td>
+							<td style="text-align: center;"><a href="{% url 'edit_career_detail' post.id %}" class="btn btn-info">VIEW / EDIT</a></td>
+							<td style="text-align: center;"><a href="{% url 'delete_case' post.id %}" onclick = "if (! confirm('Continue Deletion?')) { return false; }" class="btn btn-danger">DELETE</a></td>
+						</tr>
+			    		{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+		{% endif %}		
+	</div>
+</div>
+{% endblock %}

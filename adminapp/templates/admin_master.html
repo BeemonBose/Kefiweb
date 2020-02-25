@@ -1,0 +1,91 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="{% static '/css/kefiadminstyle.css' %}" rel="stylesheet">
+       <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicons/favicon.ico' %}">
+
+	<title>
+		KefiTech
+	</title>
+	<style>
+		.navbar 
+		{
+		    margin-bottom: 0px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-light navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span> 
+		      	</button>
+				<a href="{% url 'ahome'%}"><img src="{% static 'images/kefi.png' %}" alt="" style="max-width: 60%" /></a>
+			</div>
+			<div class="collapse navbar-collapse kefnav" id="myNavbar">
+				{% if user.is_authenticated %}
+				<ul class="nav navbar-nav">
+					<li class="{% if nbar == 'home' %}active{% endif %}">
+						<a class="a_colour" href="{% url 'ahome'%}">Home</a>
+					</li>
+					<li class="{% if nbar == 'case' %}active{% endif %} dropdown">
+						<a class="dropdown-toggle a_colour" data-toggle="dropdown" href="#">Case Study
+						<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="{% url 'add_case_study' %}">Add Case Study</a></li>
+							<li><a href="{% url 'edit_case_study' %}">Edit Case Study</a></li>
+						</ul>
+					</li>
+					<li class="{% if nbar == 'news' %}active{% endif %} dropdown">
+						<a class="dropdown-toggle a_colour" data-toggle="dropdown" href="#">News
+						<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="">Add News</a></li>
+							<li><a href="">Edit News</a></li>
+						</ul>
+					</li>
+					<li class="{% if nbar == 'thought' %}active{% endif %} dropdown">
+						<a class="dropdown-toggle a_colour" data-toggle="dropdown" href="#">Thought Room
+						<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="{% url 'add_thought' %}">Add Thoughts</a></li>
+							<li><a href="{% url 'edit_thoughts' %}">Edit Thoughts</a></li>
+						</ul>
+					</li>
+					<li class="{% if nbar == 'career' %}active{% endif %} dropdown">
+						<a class="dropdown-toggle a_colour" data-toggle="dropdown" href="#">Careers
+						<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="{% url 'add_career' %}">Add Career</a></li>
+							<li><a href="{% url 'edit_career' %}">Edit Career</a></li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="{% url 'logouts' %}"><span class="glyphicon glyphicon-log-out"></span> LogOut</a></li>
+			    </ul>
+			    {% else %}
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="{% url 'logins' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+			    </ul>
+			    {% endif %}
+			</div>
+		</div>
+		</nav>
+		{% block content %}
+        	Body content
+      	{% endblock %}
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+.kefnav ul li a
+{
+	color: #25215B;
+	font-size: 1.2em;
+	font-weight: 600;
+}
+.bg0
+{
+	background-image: url(../images/laptop.jpg);
+	min-height: 100vh;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.bg1
+{
+	margin-top: 20%;
+	background-color: #000000bf;
+	color: #FFF;
+	text-align: center;
+	border-radius: 15px;
+	font-size: 4em;
+}
+.bg2
+{
+	margin-top: 5%;
+	background-color: #000000bf;
+	color: #FFF;
+	border-radius: 15px;
+	padding: 20px;
+}
+.bglogin
+{
+	background-image: url(../images/laptop.jpg);
+	height: 100vh;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.navbar 
+{
+    margin-bottom: 0px;
+}
+.career_div
+{
+	text-align: center;
+	padding-bottom: 15px;
+}
+.career_inner_div
+{
+	color: #000;
+	background-color: #fff;
+	border-radius: 10px;
+	text-align: center;
+	padding: 10px;
+}
+a
+{
+	text-decoration: none !important;
+}
+.active
+{
+	background-color: #25215B;
+}
+.active .a_colour
+{
+	color: #EAC515 !important;
+}
+.nav>li>a:focus, .nav>li>a:hover
+{
+	background-color: #25215B;
+	color: #fff;
+}
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover 
+{
+    background-color: #25215B;
+	color: #fff;
+}
+.navbar
+{
+    background-color: #fff;
+}
+.table-hover>tbody>tr:hover {
+    color: #000;
+}
+.table-hover>tbody>tr:hover a{
+    color: #000;
+}
+a
+{
+	color: white;
+}

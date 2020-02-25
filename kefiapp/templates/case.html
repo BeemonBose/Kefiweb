@@ -1,0 +1,131 @@
+{% extends "master.html" %}
+{% block content %}
+{% load staticfiles %}
+{% load static %}
+
+<section class="background-11 " style="padding: 7.5rem 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="overflow-hidden" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                    <div data-zanim='{"delay":0}'>
+                        <a class="d-inline-block color-7" href="#">{{case_study.category}}</a>, &nbsp;
+                        <a class="d-inline-block color-7" href="#">{{case_study.uploaded_date}}</a>
+                    </div>
+                    <h4 data-zanim='{"delay":0.1}'>{{case_study.title}}</h4>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-12">
+                        <img class="radius-tr-secondary radius-tl-secondary" src="{{case_study.case_image.url}}" alt="">
+                    </div>
+                    <div class="col-12">
+                        <div class="background-white p-5 radius-secondary thought_data">
+                            <h5>The Challenge</h5>
+                            {{case_study.challenge |safe }}
+                            <h5>The Solution</h5>
+                            {{case_study.solution |safe }}
+                            <h5>Time Line</h5>
+                            {{case_study.timeline }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center ml-auto mt-5 mt-lg-0">
+                <div class="row px-2">
+                    <div class="col">
+                        <div class="background-white p-5 radius-secondary">
+                            <div class="overflow-hidden" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                                <!-- <img class="radius-round" data-zanim='{"delay":0}' src="{{thoughts.profile_image.url}}" alt=""> -->
+                                <h5 class="text-capitalize mt-3 mb-0" data-zanim='{"delay":0.1}'>{{case_study.company }}</h5>
+                                <p class="mb-0 mt-3" data-zanim='{"delay":0.2}'>{{case_study.location}}</p>
+                                <p> </p>
+                                {% if case_study.screen1 != '' %}
+                                <img class="radius-tr-secondary radius-tl-secondary radius-br-secondary radius-bl-secondary" data-zanim='{"delay":0}' src="{{case_study.screen1.url}}" style="cursor:zoom-in; width: 40%;height: 40%;" data-toggle="modal" data-target="#screen1">
+                                {% endif %}
+                                {% if case_study.screen2 != '' %}
+                                <img class="radius-tr-secondary radius-tl-secondary radius-br-secondary radius-bl-secondary" data-zanim='{"delay":0}' src="{{case_study.screen2.url}}" style="cursor:zoom-in; width: 40%;height: 40%;" data-toggle="modal" data-target="#screen2">
+                                {% endif %}
+                                {% if case_study.screen3 != '' %}
+                                <img class="radius-tr-secondary radius-tl-secondary radius-br-secondary radius-bl-secondary" data-zanim='{"delay":0}' src="{{case_study.screen3.url}}" style="cursor:zoom-in; width: 40%;height: 40%;" data-toggle="modal" data-target="#screen3">
+                                {% endif %}
+                                {% if case_study.screen4 != '' %}
+                                <img class="radius-tr-secondary radius-tl-secondary radius-br-secondary radius-bl-secondary" data-zanim='{"delay":0}' src="{{case_study.screen4.url}}" style="cursor:zoom-in; width: 40%;height: 40%;" data-toggle="modal" data-target="#screen4">
+                                {% endif %}
+                                {% if case_study.screen5 != '' %}
+                                <img class="radius-tr-secondary radius-tl-secondary radius-br-secondary radius-bl-secondary" data-zanim='{"delay":0}' src="{{case_study.screen5.url}}" style="cursor:zoom-in; width: 40%;height: 40%;" data-toggle="modal" data-target="#screen5">
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row px-2">
+                    <div class="col">
+                        <a class="btn btn-primary" style="margin-top: 30px; width: 100%" href="{% url 'casestudy' %}">Case Studies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.row-->
+    </div>
+    <!--/.container-->
+</section>
+
+{% if case_study.screen1 != '' %}
+<div class="modal fade" id="screen1" tabindex="-1" role="dialog" aria-labelledby="screen1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-body">
+            <img src="{{case_study.screen1.url}}" style="max-height: 85vh;">
+        </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% if case_study.screen2 != '' %}
+<div class="modal fade" id="screen2" tabindex="-1" role="dialog" aria-labelledby="screen2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-body">
+            <img src="{{case_study.screen2.url}}" style="max-height: 85vh;">
+        </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% if case_study.screen3 != '' %}
+<div class="modal fade" id="screen3" tabindex="-1" role="dialog" aria-labelledby="screen3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-body">
+            <img src="{{case_study.screen3.url}}" style="max-height: 85vh;">
+        </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% if case_study.screen4 != '' %}
+<div class="modal fade" id="screen4" tabindex="-1" role="dialog" aria-labelledby="screen4" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-body">
+            <img src="{{case_study.screen4.url}}" style="max-height: 85vh;">
+        </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% if case_study.screen5 != '' %}
+<div class="modal fade" id="screen5" tabindex="-1" role="dialog" aria-labelledby="screen5" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-body">
+            <img src="{{case_study.screen5.url}}" style="max-height: 85vh;">
+        </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

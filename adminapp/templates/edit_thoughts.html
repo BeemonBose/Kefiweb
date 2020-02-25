@@ -1,0 +1,69 @@
+{% extends "admin_master.html" %}
+{% block content %}
+{% load staticfiles %}
+{% load static %}
+
+<div class="bg0" style="padding: 20px;">
+	<div class="row" style="margin: 0px;">
+		{% if user.is_authenticated %}
+		<div class="col-md-12 bg2" style="">
+			<div class="row">			
+				<div class="col-md-offset-2 col-md-8" style="text-align: center;">
+					<h1><u>Favorites</u></h1>
+				</div>
+			</div>
+			<div class="row">	
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th class="col-md-6">NAME</th>
+							<th class="col-md-2">AUTHOR</th>
+							<th class="col-md-2" style="text-align: center;">FAVORITE</th>
+							<th class="col-md-2" style="text-align: center;">DELETE</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for post in thoughts %}
+						<tr>
+							<td><a href="{% url 'edit_thought_detail' post.id %}">{{post.heading}}</a></td>
+							<td>{{post.name}}</td>
+							<td style="text-align: center;"><a href="{% url 'remove_fav' post.id %}" onclick = "if (! confirm('Remove from Favorites?')) { return false; }" class="btn btn-info">Remove Favorites</a></td>
+							<td style="text-align: center;"><a href="{% url 'delete_thought' post.id %}" onclick = "if (! confirm('Continue Deletion?')) { return false; }" class="btn btn-danger">DELETE</a></td>
+						</tr>
+			    		{% endfor %}
+					</tbody>
+				</table>
+			</div>
+			<div class="row">			
+				<div class="col-md-offset-2 col-md-8" style="text-align: center;">
+					<h1><u>Others</u></h1>
+				</div>
+			</div>
+			<div class="row">	
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th class="col-md-6">NAME</th>
+							<th class="col-md-2">AUTHOR</th>
+							<th class="col-md-2" style="text-align: center;">FAVORITE</th>
+							<th class="col-md-2" style="text-align: center;">DELETE</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for post in others %}
+						<tr>
+							<td><a href="{% url 'edit_thought_detail' post.id %}">{{post.heading}}</a></td>
+							<td>{{post.name}}</td>
+							<td style="text-align: center;">{% if f_no < 3 %}<a href="{% url 'add_fav' post.id %}" onclick = "if (! confirm('Add to Favorites?')) { return false; }" class="btn btn-success">Add to Favorites</a>{% endif %}</td>
+							<td style="text-align: center;"><a href="{% url 'delete_thought' post.id %}" onclick = "if (! confirm('Continue Deletion?')) { return false; }" class="btn btn-danger">DELETE</a></td>
+						</tr>
+			    		{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>		
+	</div>
+	{% endif %}
+</div>
+
+{% endblock %}

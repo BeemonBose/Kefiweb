@@ -1,0 +1,65 @@
+{% extends "master.html" %}
+{% block content %}
+{% load staticfiles %}
+{% load static %}
+
+<section class="background-11 " style="padding: 7.5rem 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="overflow-hidden" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                    <div data-zanim='{"delay":0}'>
+                        <a class="d-inline-block color-7" href="#">{{thoughts.name}}</a>, &nbsp;
+                        <a class="d-inline-block color-7" href="#">{{thoughts.uploaded_date}}</a>
+                    </div>
+                    <h4 data-zanim='{"delay":0.1}'>{{thoughts.heading}}</h4>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-12">
+                        <img class="radius-tr-secondary radius-tl-secondary" src="{{thoughts.cover_image.url}}" alt="">
+                    </div>
+                    <div class="col-12">
+                        <div class="background-white p-5 radius-secondary thought_data">
+                            {{thoughts.thought | safe }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center ml-auto mt-5 mt-lg-0">
+                <div class="row px-2">
+                    <div class="col">
+                        <div class="background-white p-5 radius-secondary">
+                            <div class="overflow-hidden" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                                <img class="radius-round" data-zanim='{"delay":0}' src="{{thoughts.profile_image.url}}" alt="">
+                                <h5 class="text-capitalize mt-3 mb-0" data-zanim='{"delay":0.1}'>{{thoughts.name}}</h5>
+                                <p class="mb-0 mt-3" data-zanim='{"delay":0.2}'>{{thoughts.position}}</p>
+                                <div class="pt-4" data-zanim='{"delay":0.3}'>
+                                    <a class="d-inline-block" target="_blank" href="{{thoughts.linkedin}}">
+                                        <span class="fa fa-linkedin-square fs-2 mx-2 color-88"></span>
+                                    </a>
+                                    <!-- <a class="d-inline-block" href="#">
+                                        <span class="fa fa-twitter-square fs-2 mx-2 color-8"></span>
+                                    </a> -->
+                                    <!-- <a class="d-inline-block" href="#">
+                                        <span class="fa fa-facebook-square fs-2 mx-2 color-8"></span>
+                                    </a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row px-2">
+                    <div class="col">
+                        <a class="btn btn-primary" style="margin-top: 30px; width: 100%" href="{% url 'thoughtroom' %}">Thought Room</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.row-->
+    </div>
+    <!--/.container-->
+</section>
+
+{% endblock %}

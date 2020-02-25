@@ -1,0 +1,104 @@
+{% extends "master.html" %}
+{% block content %}
+{% load staticfiles %}
+{% load static %}
+
+
+<section class="background-11" id="kefi_company">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-10">
+                <h3 style="text-align: center;" class="color-primary fs-2 fs-lg-3">Software Testing & Quality Assurance</span></h3>
+                <hr class="short" data-zanim='{"from":{"opacity":0,"width":0},"to":{"opacity":1,"width":"4.20873rem"},"duration":0.8}' data-zanim-trigger="scroll"
+                /> 
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <!-- <div class="col-12">
+                        <img class="radius-tr-secondary radius-tl-secondary" src="assets/images/news-1.jpg" alt="">
+                    </div> -->
+                    <div class="col-12">                            
+                        <div class="background-white p-5 radius-secondary">
+                            <div class="col-12 mb-2">
+                                <div class="overflow-hidden" data-zanim-timeline="{}">
+                                    <h4 data-zanim="{&quot;delay&quot;:0.1}" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">Independent Software verification & validation Services</h4>
+                                </div>
+                            </div>
+                            <p class="dropcap justpara">We provide manual and automated testing services for a wide range of test platforms and media for various software engineering requirements. Our testers are ISTQB certified and we have a dedicated testing team taking care of our development projects as well as offering independent testing services. All of our testers are ISTQB Certified and highly skilled in all types of testing which includes stress testing, regression testing, integration testing.</p>
+                            <p class="justpara">We work to accommodate reasonable amount of time zone overlaps. Behavior-Driven Development BDD and Continuous testing are two of our strengths within software testing and deliver both functional and non-functional testing.</p>                            
+                            <div class="col-10 offset-1 mt-4 mb-4">
+                                <img class="radius-tr-secondary radius-tl-secondary" src="{% static 'images/test-1.jpg' %}" alt="">
+                            </div>                           
+                            <div class="col-10 offset-1 mt-4 mb-4">
+                                <img class="radius-tr-secondary radius-tl-secondary" src="{% static 'images/test-2.jpg' %}" alt="">
+                            </div>                            
+                            <div class="col-12 mt-4">
+                                <div class="overflow-hidden" data-zanim-timeline="{}">
+                                    <h4 data-zanim="{&quot;delay&quot;:0.1}" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">App maintenance and support </h4>
+                                </div>
+                            </div>
+                            <ul style="color: #737373;">
+                                <li>
+                                    <p class="mb-2 justpara"><strong>Comprehensive support for mobile apps</strong></p>
+                                </li>
+                                <li>
+                                    <p class="mb-2 justpara"><strong>New device and OS releases</strong></p>
+                                </li>
+                                <li>
+                                    <p class="mb-2 justpara"><strong>Bug fixes and enhancements</strong></p>
+                                </li>
+                                <li>
+                                    <p class="mb-2 justpara"><strong>New use case and requirement planning</strong></p>
+                                </li>
+                            </ul>                          
+                            <div class="col-12 mt-4">
+                                <div class="overflow-hidden" data-zanim-timeline="{}">
+                                    <h4 data-zanim="{&quot;delay&quot;:0.1}" style="opacity: 1; transform: matrix(1, 0, 0, 1, 0, 0);">Mobile Testing and security</h4>
+                                </div>
+                            </div>
+                            <ul style="color: #737373;">
+                                <li>
+                                    <p class="mb-2 justpara"><strong>Cloud and on premise mobile testing</strong></p>
+                                </li>
+                                <li>
+                                    <p class="mb-2 justpara"><strong>Dedicated and/or shared QA services</strong></p>
+                                </li>
+                                <li>
+                                    <p class="mb-2 justpara"><strong>Automation and script creation</strong></p>
+                                </li>
+                                <li>
+                                    <p class="mb-2 justpara"><strong>Performance and compliance reporting</strong></p>
+                                </li>
+                                <li>
+                                    <p class="mb-2 justpara"><strong>Security Testing and Assessment</strong></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.row-->
+    </div>
+    <div class="container">
+        <div class="row justify-content-center mt-4">
+            <div class="col-10 col-md-10">
+                <h5 class="color-primary">Other Services</span></h5>
+                <ul style="color: #737373;">
+                    <li>
+                        <a href="{% url 'development' %}"><p class="mb-2 justpara"><strong>Software Development </strong></p></a>
+                    </li>
+                    <li>
+                        <a href="{% url 'bpo' %}"><p class="mb-2 justpara"><strong>BPO / Back End Services </strong></p></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/.container-->
+</section>
+{% endblock %}

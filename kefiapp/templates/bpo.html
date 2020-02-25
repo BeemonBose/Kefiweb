@@ -1,0 +1,65 @@
+{% extends "master.html" %}
+{% block content %}
+{% load staticfiles %}
+{% load static %}
+
+
+<section class="background-11" id="kefi_company">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-10">
+                <h3 style="text-align: center;" class="color-primary fs-2 fs-lg-3">BPO / Back End Services</span></h3>
+                <hr class="short" data-zanim='{"from":{"opacity":0,"width":0},"to":{"opacity":1,"width":"4.20873rem"},"duration":0.8}' data-zanim-trigger="scroll"
+                /> </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <!-- <div class="col-12">
+                        <img class="radius-tr-secondary radius-tl-secondary" src="assets/images/news-1.jpg" alt="">
+                    </div> -->
+                    <div class="col-12">
+                        <div class="background-white p-5 radius-secondary">
+                            <p class="dropcap justpara">Kefi’s resource outsourcing services helps organizations to overcome the challenge of finding right resource at the right time. With our quick ramp up capability, organizations will have the best resources they want in no time, for most business functions.</p>
+                            <p class="justpara">We focus on supporting our clients with every need arising out of non-core functions. We currently help US clients with marketing support with a dedicated team based out of our Technopark Office in Trivandrum. Our focus is on the following industries for both outsourcing and offshoring needs. Kefi can be your trusted Business Outsourcing partner.</p>
+                            <ul style="color: #737373;">
+                                <li>
+                                    <p class="mb-2 justpara"><strong>Healthcare</strong> - Data Entry, Data Integration, report handling, clinical history records, patient records, medical equipment order tracking, prescription handling, lab result records to name a few.</p>
+                                </li>
+                                <li>
+                                    <p class="mb-2 justpara"><strong>Travel & Hospitality</strong> - Customer service, inbound and outbound calls at our Indian call centre, sales & marketing support, social media support, content management.</p>
+                                </li>
+                                <li>
+                                    <p class="mb-2 justpara"><strong>Media & Entertainment</strong> - Content management, content marketing, customer service.</p>
+                                </li>
+                                <li>
+                                    <p class="mb-2 justpara"><strong>eCommerce</strong> - Order Processing, data entry management, Product photo editing, payment processing, order tracking & reporting, return order processing, product catalogue management, customer service, sales & marketing support.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.row-->
+    </div>
+    <div class="container">
+        <div class="row justify-content-center mt-4">
+            <div class="col-10 col-md-10">
+                <h5 class="color-primary">Other Services</span></h5>
+                <ul style="color: #737373;">
+                    <li>
+                        <a href="{% url 'development' %}"><p class="mb-2 justpara"><strong>Software Development </strong></p></a>
+                    </li>
+                    <li>
+                        <a href="{% url 'testing' %}"><p class="mb-2 justpara"><strong>Software Testing & QA </strong></p></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--/.container-->
+</section>
+{% endblock %}

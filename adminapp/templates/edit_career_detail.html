@@ -1,0 +1,66 @@
+{% extends "admin_master.html" %}
+{% block content %}
+{% load staticfiles %}
+{% load static %}
+
+<div class="bg0" style="">
+	{% if user.is_authenticated %}
+	<div class="col-md-offset-1 col-md-10 bg2" style="">
+		<div class="row">			
+			<div class="col-md-offset-2 col-md-8" style="text-align: center;margin-bottom: 20px;">
+				<h1>Add Careers</h1>
+			</div>
+		</div>
+		<form action="{% url 'edit_career_detail' careers.id %}" method="POST">{% csrf_token%}
+		<div class="row">
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="position">Position:</label>
+					<input type="text" name="position" value="{{careers.position}}" class="form-control" placeholder="Eg : Tech Lead" required>
+				</div>
+				<div class="form-group">
+					<label for="heading">Heading :</label>
+					<input type="text" name="heading" value="{{careers.heading}}" class="form-control" placeholder="Eg : Python/Django Programmer" required>
+				</div>
+				<div class="form-group">
+					<label for="location">Location :</label>
+					<input type="text" name="location" value="{{careers.location}}" value="Trivandrum" class="form-control" placeholder="Eg : Trivandrum" required>
+				</div>
+				<div class="form-group">
+					<label for="experience">Experience :</label>
+					<input type="text" name="experience" value="{{careers.experience}}" class="form-control" placeholder="Eg : 5+years of Experience in Application Devlopement." maxlength="60" required>
+				</div>
+				<div class="form-group">
+					<label for="desc">Description :</label>
+					<textarea class="form-control" name="desc" rows="3" placeholder="Eg : We are looking for a Team lead with 5+ years of experience in Node js programming." required>{{careers.desc}}</textarea>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label for="responsibility">Responsibility : (<i style="font-weight: 200;">Sepereate points with #</i>)</label>
+					<textarea class="form-control" name="responsibility" rows="5" placeholder="Sepereate each points with full stop ('.')" required>{{careers.responsibility}}</textarea>
+				</div>
+				<div class="form-group">
+					<label for="requirements">Requirements : (<i style="font-weight: 200;">Sepereate points with #</i>)</label>
+					<textarea class="form-control" name="requirements" rows="4" required>{{careers.requirements}}</textarea>
+				</div>
+				<div class="form-group">
+					<label for="qualification">Qualification : (<i style="font-weight: 200;">Sepereate points with #</i>)</label>
+					<textarea class="form-control" name="qualification" rows="4" required>{{careers.qualification}}</textarea>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-offset-4 col-md-2" style="text-align: center;">				
+				<button type="submit" class="btn btn-primary" style="width: 100%;">Submit</button>
+			</div>
+			<div class="col-md-2" style="text-align: center;">				
+				<a href="{% url 'edit_career' %}" class="btn btn-info" style="width: 100%;">Cancel</a>
+			</div>
+		</div>
+		</form> 
+	</div>
+	{% endif %}
+</div>
+
+{% endblock %}

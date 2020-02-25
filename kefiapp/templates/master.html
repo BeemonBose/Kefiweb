@@ -1,0 +1,325 @@
+{% load staticfiles %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--  -->
+        <!--    Document Title-->
+        <!-- =============================================-->
+        <title>Kefi Tech Solutions</title>
+        <!--  -->
+        <!--    Favicons-->
+        <!--    =============================================-->
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/favicons/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicons/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicons/favicon-16x16.png' %}">
+        <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicons/favicon.ico' %}">
+        <link rel="manifest" href="{% static 'images/favicons/manifest.json' %}">
+        <link rel="mask-icon" href="{% static 'images/favicons/safari-pinned-tab.svg' %}" color="#5bbad5">
+        <meta name="msapplication-TileImage" content="{% static 'images/favicons/mstile-150x150.png' %}">
+        <meta name="theme-color" content="#ffffff">
+        <!--  -->
+        <!--    Stylesheets-->
+        <!--    =============================================-->
+        <!-- Default stylesheets-->
+        <!-- <link href="{% static '/lib/bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet"> -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Template specific stylesheets-->
+        <link href="{% static '/lib/loaders.css/loaders.min.css' %}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700|Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link href="{% static '/lib/iconsmind/iconsmind.css' %}" rel="stylesheet">
+        <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="{% static '/lib/hamburgers/dist/hamburgers.min.css' %}" rel="stylesheet">
+        <link href="{% static '/lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+        <link href="{% static '/lib/owl.carousel/dist/assets/owl.carousel.min.css' %}" rel="stylesheet">
+        <link href="{% static '/lib/owl.carousel/dist/assets/owl.theme.default.min.css' %}" rel="stylesheet">
+        <link href="{% static '/lib/remodal/dist/remodal.css' %}" rel="stylesheet">
+        <link href="{% static '/lib/remodal/dist/remodal-default-theme.css' %}" rel="stylesheet">
+        <link href="{% static '/lib/flexslider/flexslider.css' %}" rel="stylesheet">
+        <link href="{% static '/lib/lightbox2/dist/css/lightbox.css' %}" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <!-- Main stylesheet and color file-->
+        <link href="{% static '/css/style.css' %}" rel="stylesheet">
+        <link href="{% static '/css/custom.css' %}" rel="stylesheet"> </head>
+    <body data-spy="scroll" data-target=".inner-link" data-offset="60">
+        <main>
+            <div class="loading" id="preloader">
+                <div class="loader h-100 d-flex align-items-center justify-content-center">
+                    <div class="line-scale">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="znav-white znav-container sticky-top navbar-elixir" id="znav-container" style="width: 100%; position:fixed;">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand overflow-hidden" href="{% url 'home'%}">
+                            <img src="{% static 'images/kefi.png' %}" alt="" style="max-width: 60%" />
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                            <div class="hamburger hamburger--emphatic">
+                                <div class="hamburger-box">
+                                    <div class="hamburger-inner"></div>
+                                </div>
+                            </div>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav fs-0 fw-700">
+                                <!-- <li>
+                                    <a class="d-block" href="index.html">Home</a>
+                                </li> -->
+                                <li>
+                                    <a href="JavaScript:void(0)">Services </a>
+                                    <ul class="dropdown fs--1" style="font-size: 14px !important;">
+                                        <li>
+                                            <a href="{% url 'development' %}">Software Development</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'testing' %}">Software Testing & QA</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'bpo' %}">BPO / Back End Services</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="{% url 'why_kefi' %}">Why Kefi</a>
+                                </li>
+                                <li>
+                                    <a href="JavaScript:void(0)">About Us</a>
+                                    <ul class="dropdown fs--1" style="font-size: 14px !important;">
+                                        <li>
+                                            <a href="{% url 'about' %}#kefi_company">The Company</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'about' %}#kefi_core">Core Domains</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'about' %}#kefi_leader">Leadership</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'about' %}#kefi_team">Meet the Team</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="JavaScript:void(0)">Kefi Hub</a>
+                                    <ul class="dropdown fs--1" style="font-size: 14px !important;">
+                                        <li>
+                                            <a href="{% url 'casestudy' %}">Case Studies</a>
+                                        </li>
+                                        <!-- <li>
+                                            <a href="{% url 'news' %}">News</a>
+                                        </li> -->
+                                        <li>
+                                            <a href="{% url 'thoughtroom' %}">Thought Room</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="d-block" href="{% url 'career' %}">Careers</a>
+                                </li>
+                                <li>
+                                    <a class="d-block" href="#contact_us">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            {% block content %}
+                Body content
+            {% endblock %}            
+            <section style="background-color: #353535;padding-bottom: 0px;    z-index: -1;" id="contact_us">                
+                <div class="container addr_center">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="kef_border">
+                                <div class="ad_tittle">India</div>
+                                <ul style="padding-left: 0px;">
+                                    <li class="ad_li">
+                                        <i class="fa fa-map-marker"></i>
+                                        &nbsp;Kefi Tech Solutions Pvt Ltd<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Module No. D - 1, Ground Floor<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Periyar Building, Phase 1<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Technopark, Thiruvananthapuram<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Kerala, India<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Postal Code - 695 581<p></p>
+                                    </li>
+                                    <li class="ad_li">                                        
+                                        <i class="fa fa-phone"></i>
+                                        HR : +91 7592063333<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;+91 9746616461<br><p></p>
+                                    </li>
+                                    <li class="ad_li">  
+                                        <a href="mailto:info@kefitech.com" style="color: #b9b9b9">                                    
+                                        <i class="fa fa-envelope-o"></i>
+                                        &nbsp;info@kefitech.com<br><p></p></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="kef_border">
+                                <div class="ad_tittle">India</div>
+                                <ul style="padding-left: 0px;">
+                                    <li class="ad_li">
+                                        <i class="fa fa-map-marker"></i>
+                                        &nbsp;Kefi Tech Solutions Pvt Ltd<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Module No. D - 1, Ground Floor<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;ParkCentre, Phase 1<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Technopark, Thiruvananthapuram<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Kerala, India<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Postal Code - 695 581<p></p>
+                                    </li>
+                                    <li class="ad_li">                                        
+                                        <i class="fa fa-phone"></i>
+                                        HR : +91 7592063333<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;+91 9746616461<br><p></p>
+                                    </li>
+                                    <li class="ad_li">  
+                                        <a href="mailto:info@kefitech.com" style="color: #b9b9b9">                                    
+                                        <i class="fa fa-envelope-o"></i>
+                                        &nbsp;info@kefitech.com<br><p></p></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div>
+                                <div class="ad_tittle">Canada</div>
+                                <ul style="padding-left: 0px;">
+                                    <li class="ad_li">
+                                        <i class="fa fa-map-marker"></i>
+                                        &nbsp;Kefi Tech Solutions Pvt Ltd<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;250 Yonge Street<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Ste 2201, Suite 2201<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Toronto, ON M5B 2L7<br>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;Canada<br><p></p><br>
+                                    </li>
+                                    <li class="ad_li">                                        
+                                        <i class="fa fa-phone"></i>
+                                        &nbsp;&nbsp;(647) 428-6230
+                                    </li>
+                                    <li class="ad_li">                                        
+                                        <i class="fa fa-fax"></i>
+                                        &nbsp;(647) 428-5740<br><p></p>
+                                    </li>
+                                    <li class="ad_li">  
+                                        <a href="mailto:info@kefitech.com" style="color: #b9b9b9">                                    
+                                        <i class="fa fa-envelope-o"></i>
+                                        &nbsp;info@kefitech.com<br><p></p></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr style="background-color: #2D2D2D;" />
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3" style="color: #737373">                            
+                            <div class="ad_tittle">Tweets</div><br> 
+                            <div class="justpara">Kefi's mobility team have expertise in mobile app development in Appcelerator Titanium Framework. Titanium SDK is an open-source framework that allows the creation of native mobile apps... <a class="inactiveLink" style="color: #737373" href="">lnkd.in/fYgYF97</a></div><br>
+                            <div><a href="https://twitter.com/KefiTech?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-show-count="false">Follow @KefiTech</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </div>
+                        </div>
+                        <div class="col-md-3">                            
+                            <div class="ad_tittle">Useful Links</div><br>
+                            <ul style="padding-left: 0px;">
+                                <li class="ad_li">
+                                    <a href="{% url 'about' %}" style="color: #737373">                                    
+                                    <i class="fa fa-chevron-right"></i>
+                                    &nbsp;About Us<br><p></p></a>
+                                </li>
+                                <li class="ad_li">
+                                    <a href="{% url 'career' %}" style="color: #737373">                                    
+                                    <i class="fa fa-chevron-right"></i>
+                                    &nbsp;Careers<br><p></p></a>
+                                </li>
+                                <li class="ad_li">
+                                    <a href="{% url 'thoughtroom' %}" style="color: #737373">                                    
+                                    <i class="fa fa-chevron-right"></i>
+                                    &nbsp;Thought Room<br><p></p></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">                            
+                            <div class="ad_tittle">About Kefi</div><br>
+                            <p class="justpara">Kefi Tech Solutions Pvt Ltd is a multidimensional IT company. Kefi brings competitiveness with quality in IT outsourcing service. We are a group of passionate and experienced professionals who have come together with a common goal.</p>
+                        </div>
+                        <div class="col-md-3" style="margin-bottom: 7%;margin-top: 7%;text-align: center;">
+                            <img src="{% static 'images/kefi.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="text-center py-4" style="background-color: #353535;    z-index: -1;">
+                <hr style="background-color: #2D2D2D;" />
+                <div class="container">
+                    <div class="row align-items-center" style="opacity: 0.85;">
+                        <div class="col-sm-2 text-sm-left">
+                            <a href="index.html">
+                                <!-- <img src="{% static '/images/logo-light.png" alt=""  style="max-width: 20%"/> -->
+                            </a>
+                        </div>
+                        <div class="col-sm-7 mt-3 mt-sm-0">
+                            <p id="myid" class="lh-6 mb-0 fw-600">&copy; Copyright © 2018 kefitech.com. All rights reserved. <a target="_blank" class="foot_a" href="{% static '/Terms and Conditions.pdf">Terms of Use</a>  | <a class="foot_a" target="_blank" href="{% static '/Privacy Policy.pdf">Privacy Policy</a></p>
+                        </div>
+                        <div class="col-sm-3 text-sm-right mt-3 mt-sm-0">
+                            <div class="row sc">
+                                <!-- <div class="col-2 ">
+                                    <a href="#" target="_blank" > <i class="fa fa-instagram"></i> </a>
+                                </div> -->
+                                <div class=" social social-facebook">
+                                    <a href="https://www.facebook.com/KefiTechSolutionsPvtLtd/" target="_blank" > <i class="fa fa-facebook"></i> </a>
+                                </div>
+                                <div class=" social social-twitter">
+                                    <a href="https://twitter.com/KefiTech" target="_blank" > <i class="fa fa-twitter"></i> </a>
+                                </div>
+                                <div class=" social social-slideshare" style="text-align: center;padding-top: 8px;">
+                                    <a href="https://www.glassdoor.co.in/Overview/Working-at-Kefi-Tech-Solutions-EI_IE1880350.11,30.htm" target="_blank" >
+                                        <img height="20px" src="{% static 'images/glassdoor-green-icon.png' %}" onmouseover="this.src='{% static 'images/glassdoor-white-icon.png' %}'" onmouseout="this.src='{% static 'images/glassdoor-green-icon.png' %}'" border="0" alt="" />
+                                    </a>
+                                </div>
+                                <div class=" social social-linkedin" >
+                                    <a href="https://in.linkedin.com/company/kefi-tech-solutions" target="_blank" > <i class="fa fa-linkedin"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.row-->
+                </div>
+                <!--/.container-->
+            </section>
+        </main>
+        <!--  -->
+        <!--    JavaScripts-->
+        <!--    =============================================-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <script src="{% static '/lib/jquery/dist/jquery.min.js' %}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!-- <script src="{% static '/lib/bootstrap/dist/js/bootstrap.min.js' %}"></script> -->
+        <script src="{% static '/lib/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+        <script src="{% static '/lib/gsap/src/minified/TweenMax.min.js' %}"></script>
+        <script src="{% static '/lib/gsap/src/minified/plugins/ScrollToPlugin.min.js' %}"></script>
+        <script src="{% static '/lib/CustomEase.min.js' %}"></script>
+        <script src="{% static '/js/config.js' %}"></script>
+        <script src="{% static '/js/zanimation.js' %}"></script>
+        <script src="{% static '/lib/owl.carousel/dist/owl.carousel.min.js' %}"></script>
+        <script src="{% static '/lib/remodal/dist/remodal.js' %}"></script>
+        <script src="{% static '/lib/lightbox2/dist/js/lightbox.js' %}"></script>
+        <script src="{% static '/lib/flexslider/jquery.flexslider-min.js' %}"></script>
+        <script src="{% static '/js/core.js' %}"></script>
+        <script src="{% static '/js/main.js' %}"></script>
+    </body>
+</html>

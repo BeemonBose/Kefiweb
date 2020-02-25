@@ -1,0 +1,14 @@
+{% extends "admin_master.html" %}
+{% block content %}
+{% load staticfiles %}
+{% load static %}
+
+<div class="bg0" style="">
+	{% if user.is_authenticated %}
+	<div class="col-md-offset-4 col-md-4 bg1" style="">
+		WELCOME
+	</div>
+	{% endif %}
+</div>
+
+{% endblock %}

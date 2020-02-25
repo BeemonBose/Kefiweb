@@ -1,0 +1,60 @@
+{% extends "master.html" %}
+{% block content %}
+{% load staticfiles %}
+{% load static %}
+
+<section class="background-11 " style="padding: 7.5rem 0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="overflow-hidden" data-zanim-timeline="{}" data-zanim-trigger="scroll">
+                    <div data-zanim='{"delay":0}'>
+                        <a class="d-inline-block color-7" href="#">{{careers.location}}</a>, &nbsp;
+                        <a class="d-inline-block color-7" href="#">{{careers.uploaded_date}}</a>
+                    </div>
+                    <h4 data-zanim='{"delay":0.1}'>{{careers.heading}}</h4>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="row">
+                    <!-- <div class="col-12">
+                        <img class="radius-tr-secondary radius-tl-secondary" src="assets/images/news-1.jpg" alt="">
+                    </div> -->
+                    <div class="col-12">
+                        <div class="background-white p-5 radius-secondary">
+                            <p class="dropcap" style="text-align: justify;">{{careers.desc}}<br><br>
+                            <strong>Responsibilities</strong>
+                            <ul style="color: #737373;">
+                                {% for post1 in resp %} 
+                                <li>
+                                    <p class="mb-2">{{post1}}</p>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            <strong style="color: #737373;">Requirements</strong><br><br>
+                            <ul style="color: #737373;">
+                                {% for post1 in req %} 
+                                <li>
+                                    <p class="mb-2">{{post1}}</p>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                            <strong style="color: #737373;">Qualification</strong><br><br>
+                            <ul style="color: #737373;">
+                                {% for post1 in qual %} 
+                                <li>
+                                    <p class="mb-2">{{post1}}</p>
+                                </li>
+                                {% endfor %}
+                            </ul></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/.row-->
+    </div>
+    <!--/.container-->
+</section>
+
+{% endblock %}
